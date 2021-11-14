@@ -4,6 +4,9 @@ const accountSignOut = async () => {
   try {
     const auth = getAuth();
     await signOut(auth);
+
+    alert('계정이 로그아웃 되었습니다.');
+    window.location.reload();
   } catch (err) {
     throw err;
   }

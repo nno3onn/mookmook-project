@@ -24,7 +24,8 @@ const SignInModal = ({ isOpen, setter }) => {
     if (provider) {
       try {
         await signInWithPopup(auth, provider);
-        return setter(false);
+        setter(false);
+        return window.location.reload();
       } catch (err) {
         console.error(err);
       }

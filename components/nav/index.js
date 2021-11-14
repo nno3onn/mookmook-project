@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
-import { DropdownButton, Dropdown } from 'react-bootstrap';
-
 import ButtonComponent from 'components/button';
 import SignInModal from 'components/modal/sign';
 import PostModal from 'components/modal/review/post';
@@ -28,7 +26,7 @@ const Nav = () => {
   useEffect(() => {
     setUid(account.get('uid'));
     setProfile(account.get('photoURL'));
-  }, []);
+  }, account);
 
   const handleSignOut = async () => {
     if (window.confirm('로그아웃 하시겠습니까?')) {
@@ -67,22 +65,6 @@ const Nav = () => {
                   <a className="bi bi-plus-square" />
                 </div>
                 <div className={styles['nav-icon']}>
-                  {/* <div
-                  className={styles['user']}
-                  style={{
-                    backgroundPosition: 'center',
-                    backgroundSize: 24,
-                    backgroundImage: `url(${profile})`,
-                  }}
-                />
-                <DropdownButton id="dropdown-basic-button">
-                  <Dropdown.Item>
-                    <Link href="/profile">프로필</Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => handleSignOut}>
-                    로그아웃
-                  </Dropdown.Item>
-                </DropdownButton> */}
                   <div
                     className={styles['user']}
                     style={{
@@ -110,8 +92,12 @@ const Nav = () => {
       </div>
       {isProfile ? (
         <ul className={styles['profile-dropdowon-menu']}>
-          <li>프로필</li>
-          <li>로그아웃</li>
+          <li>
+            <Link href={`/user/${uid}`}>
+              <div classname={styles['link']}>프로필</div>
+            </Link>
+          </li>
+          <li onClick={handleSignOut}>로그아웃</li>
         </ul>
       ) : null}
     </>

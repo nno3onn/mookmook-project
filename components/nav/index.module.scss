@@ -54,14 +54,28 @@
 
 .profile-dropdowon-menu {
   position: fixed;
-  top: 54px;
-  right: calc(10vw + 20px);
-  background-color: yellow;
+  top: 50px;
+  right: calc(10vw - 30px);
+  background-color: white;
+  border-radius: 7px;
   z-index: 999;
   list-style: none;
   padding-left: 0px;
 
+  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+
   li {
-    padding: 10px;
+    width: 100%;
+    padding: 15px 20px 15px 20px;
+    &:hover {
+      cursor: pointer;
+      background-color: #f1f1f1;
+      border-radius: 7px;
+    }
+
+    .link {
+      width: 100%;
+      background-color: yellow;
+    }
   }
 }
