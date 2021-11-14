@@ -1,11 +1,12 @@
-@import './theme.scss';
+@import './colors.scss';
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,7 +29,7 @@ input {
   appearance: none;
   cursor: text;
 }
-input[type="password" i] {
+input[type='password' i] {
   font-family: sans-serif;
 }
 input::-ms-clear {
@@ -40,7 +41,7 @@ input[type='number']::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
 }
-input[type="file"] {
+input[type='file'] {
   display: none;
 }
 

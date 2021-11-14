@@ -1,61 +1,27 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable-next-line react/prop-types */
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
 
-import firebase from "firebase/app";
-import "firebase/auth";
+import AuthHoc from 'components/hocs';
+import firebaseInit from 'utils/common/firebaseInit';
 
-import { createStore } from "redux";
-import { createWrapper } from "next-redux-wrapper";
+import { createStore } from 'redux';
+import { createWrapper } from 'next-redux-wrapper';
 
-import reducers from "redux/reducers";
+import reducers from 'redux/reducers';
 
-// eslint-disable-next-line camelcase
-import {
-  AR_signOut,
-  AR_updateAccountInfo,
-} from "redux/reducers/accountReducer";
-
-import "styles/globals.scss";
+import 'styles/globals.scss';
 
 const App = ({ Component, pageProps }) => {
-  if (firebase.apps.length === 0) {
-    firebase.initializeApp({
-      apiKey: process.env.apiKey,
-      authDomain: process.env.authDomain,
-      projectId: process.env.projectId,
-      storageBucket: process.env.storageBucket,
-      messagingSenderId: process.env.messagingSenderId,
-      appId: process.env.appId,
-      measurementId: process.env.measurementId,
-    });
-  }
+  firebaseInit();
 
-  const dispatch = useDispatch();
-
-  useEffect(async () => {
-    firebase.auth().onAuthStateChanged(async (user) => {
-      if (!user) dispatch(AR_signOut());
-      else {
-        const updateData = [
-          ["uid", user.uid],
-          ["email", user.email],
-          ["phoneNumber", user.phoneNumber],
-          ["displayName", user.displayName],
-          ["photoURL", user.photoURL],
-        ];
-        dispatch(AR_updateAccountInfo(updateData));
-      }
-    });
-  }, []);
-
-  return <Component {...pageProps} />;
+  return (
+    <AuthHoc>
+      <Component {...pageProps} />
+    </AuthHoc>
+  );
 };
 
 const makeStore = (initialState) => createStore(reducers, initialState);
-
 const wrapper = createWrapper(makeStore);
 
 export default wrapper.withRedux(App);

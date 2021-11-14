@@ -1,11 +1,11 @@
-import React from 'react';
+import { useRouter } from 'next/router';
 
 const Home = () => {
-  return (
-    <div>
-      mookmook
-    </div>
-  );
+  const router = useRouter();
+
+  router.push('/main');
+
+  return null;
 };
 
 export default Home;
