@@ -1,0 +1,54 @@
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.close-wrapper {
+  margin-left: auto;
+  width: fit-content;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.logo {
+  margin: 0px auto 50px auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button-wrapper {
+  .google {
+    width: 300px;
+    height: 35px;
+    border-radius: 4px;
+    background: #db3236;
+    color: white;
+    border: 0px transparent;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+
+    i {
+      margin-right: 15px;
+    }
+  }
+  .facebook {
+    width: 300px;
+    height: 35px;
+    border-radius: 4px;
+    background: #3b5998;
+    color: white;
+    border: 0px transparent;
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+
+    i {
+      margin-right: 15px;
+    }
+  }
+}

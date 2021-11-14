@@ -16,20 +16,16 @@ const AuthHoc = ({ children }) => {
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(true);
-  const [uid, setUid] = useState('');
 
   useEffect(async () => {
     try {
       const auth = getAuth();
       onAuthStateChanged(auth, async (user) => {
-        console.log(user);
+        // console.log(user);
 
         if (!user) {
           dispatch(AR_signOut());
-          setUid('');
         } else {
-          setUid(user.uid);
-
           const updateData = [
             ['uid', user.uid],
             ['email', user.email],
@@ -49,10 +45,12 @@ const AuthHoc = ({ children }) => {
   if (loading) return <LoadingView />;
 
   return (
-    <div className={styles.page}>
-      <Nav uid={uid} />
-      <div className={styles.contents}>{children}</div>
-    </div>
+    <>
+      <Nav />
+      <div className={styles.page}>
+        <div className={styles.contents}>{children}</div>
+      </div>
+    </>
   );
 };
 

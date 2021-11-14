@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import AuthHoc from 'components/hocs';
 import firebaseInit from 'utils/common/firebaseInit';

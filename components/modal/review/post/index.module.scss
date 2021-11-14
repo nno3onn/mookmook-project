@@ -1,0 +1,15 @@
+.modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.close-wrapper {
+  margin-left: auto;
+  width: fit-content;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

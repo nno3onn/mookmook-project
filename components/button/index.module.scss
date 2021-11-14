@@ -1,0 +1,9 @@
+.button-wrapper {
+  margin: 20px;
+  padding: 8px;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

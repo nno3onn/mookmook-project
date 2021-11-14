@@ -1,0 +1,67 @@
+@import '../../styles/colors.scss';
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 54px;
+  background-color: $color-nav;
+  color: white;
+}
+
+.nav-items-wrapper {
+  height: 100%;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 20px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.nav-right-wrapper {
+  margin-right: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.nav-icon {
+  width: fit-content;
+  padding: 10px;
+  font-size: 24px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .user {
+    width: 24px;
+    height: 24px;
+    border: 1px solid white;
+    border-radius: 100%;
+  }
+}
+
+.profile-dropdowon-menu {
+  position: fixed;
+  top: 54px;
+  right: calc(10vw + 20px);
+  background-color: yellow;
+  z-index: 999;
+  list-style: none;
+  padding-left: 0px;
+
+  li {
+    padding: 10px;
+  }
+}

@@ -3,14 +3,13 @@
 .page {
   width: 100vw;
   min-height: 100vh;
-  // background-color: $color-light-grey-2;
-  padding: 100px 0px 120px 180px;
   display: flex;
   justify-content: center;
 }
 
 .contents {
+  margin-top: 54px;
   display: flex;
   flex-direction: column;
-  // width: $content-width;
+  width: 80vw;
 }
