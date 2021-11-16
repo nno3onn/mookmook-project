@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
@@ -22,6 +22,15 @@ const Nav = () => {
   const [contactModalShow, setContactModalShow] = useState(false);
   const [postModalShow, setPostModalShow] = useState(false);
   const [isProfile, setIsProfile] = useState(false);
+
+  const dropdown = useRef();
+
+  console.log(!dropdown.current);
+
+  useEffect(() => {
+    window.addEventListener('click', dropdown, false);
+    return () => window.removeEventListener('click', dropdown);
+  }, []);
 
   useEffect(() => {
     setUid(account.get('uid'));
@@ -92,7 +101,7 @@ const Nav = () => {
         </div>
       </div>
       {isProfile ? (
-        <ul className={styles['profile-dropdowon-menu']}>
+        <ul className={styles['profile-dropdowon-menu']} ref={dropdown}>
           <li>
             <Link href={`/user/${uid}`}>
               <div classname={styles['link']}>프로필</div>

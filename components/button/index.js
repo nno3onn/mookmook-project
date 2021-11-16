@@ -3,8 +3,8 @@ import styles from './index.module.scss';
 const ButtonComponent = ({
   label,
   width,
-  backgroundColor,
-  color,
+  backgroundColor = '#003366',
+  color = 'white',
   handleClick,
 }) => (
   <button

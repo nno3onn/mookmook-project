@@ -1,31 +1,25 @@
-.speechbubble {
-  position: relative;
-  background: #ffffff;
-  border-color: #ffffff;
+@import '/styles/theme.scss';
+
+.modal-wrapper {
+  width: 400px;
 }
 
-.speechbubble:after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
-  width: 0;
-  height: 0;
-  border: 37px solid transparent;
-  border-top-color: #ffffff;
-  border-bottom: 0;
-  border-right: 0;
-  margin-left: -18.5px;
-  margin-bottom: -37px;
+.header-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  height: 50px;
 }
 
-.modalposition {
-  position: absolute;
-  min-width: 300px;
-  right: 50px;
-  bottom: 100px;
+.input-wrapper {
+  margin: 20px;
+  background-color: $color-select;
+
+  input {
+    width: 75%;
+    // background-color: red;
+  }
 }
 
-.inputstyle {
-  min-width: 300px;
+.btn-wrapper {
+  right: 20px;
 }
