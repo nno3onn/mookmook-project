@@ -1,0 +1,33 @@
+// grid
+$grid-max-width: 1000px;
+
+// z-index
+$z-index-content: 1;
+$z-index-nav: 2;
+$z-index-modal: 3;
+$z-index-loading: 4;
+
+// heights
+$color-white: #fff;
+$color-black: #000;
+$color-overlay: rgba(0, 0, 0, 0.5);
+
+$height-nav: 54px;
+$height-button: 46px;
+$height-button-sign: 35px;
+
+// colors
+$color-primary: #003366;
+$color-secondary: #f5df4d;
+$color-tertiary: #939597;
+$color-background: #fafafa;
+
+$color-text: #444;
+
+$color-google: #db3236;
+$color-facebook: #3b5998;
+
+$color-select: #f1f1f1;
+
+// box-shadow
+$box-shadow-dropdown: 0 1rem 2rem hsl(0 0% 0% / 20%);

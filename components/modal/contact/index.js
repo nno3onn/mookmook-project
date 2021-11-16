@@ -4,11 +4,10 @@ import { Modal, Button } from 'react-bootstrap';
 import styles from './index.module.scss';
 
 const ContactModal = ({ isOpen, setter }) => {
-  const [question, setQuestion] = useState('');
   const account = useSelector((store) => store.account);
   const user = account.get('uid');
 
-  const handleQuestion = ({ target: { value } }) => setQuestion(value);
+  const [question, setQuestion] = useState('');
 
   const handleSubmit = async () => {
     try {
@@ -27,32 +26,34 @@ const ContactModal = ({ isOpen, setter }) => {
       throw err;
     }
   };
+  console.log('contactmodal');
 
   return (
-    <>
-      <Modal
-        show={isOpen}
-        onHide={setter(false)}
-        dialogClassName={styles.modalposition}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Give Us FeedBack</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input
-            className={styles.inputstyle}
-            placeholder="🙋‍♂️문의사항이 있다면 적어주세요"
-            value={question}
-            onChange={handleQuestion}
-          />
-        </Modal.Body>
-        <Modal.Footer className={styles.speechbubble}>
-          {/* <Button variant="secondary" onClick={handleSubmit}>
-            Send
-          </Button> */}
-        </Modal.Footer>
-      </Modal>
-    </>
+    <Modal show={isOpen} onHide={() => setter(false)}></Modal>
+    // <>
+    //   <Modal
+    //     show={isOpen}
+    //     onHide={() => setter(false)}
+    //     dialogClassName={styles.modalposition}
+    //   >
+    //     <Modal.Header closeButton>
+    //       <Modal.Title>Give Us FeedBack</Modal.Title>
+    //     </Modal.Header>
+    //     <Modal.Body>
+    //       <input
+    //         className={styles.inputstyle}
+    //         placeholder="🙋‍♂️문의사항이 있다면 적어주세요"
+    //         value={question}
+    //         onChange={({ target: value }) => setQuestion(value)}
+    //       />
+    //     </Modal.Body>
+    //     <Modal.Footer className={styles.speechbubble}>
+    //       <Button variant="secondary" onClick={handleSubmit}>
+    //         Send
+    //       </Button>
+    //     </Modal.Footer>
+    //   </Modal>
+    // </>
   );
 };
 

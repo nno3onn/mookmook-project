@@ -17,15 +17,15 @@ const Nav = () => {
   const account = useSelector((store) => store.account);
 
   const [uid, setUid] = useState('');
-  const [profile, setProfile] = useState('');
+  const [thumbnail, setThumbnail] = useState('');
   const [signModalShow, setSignModalShow] = useState(false);
-  const [postModalShow, setPostModalShow] = useState(false);
   const [contactModalShow, setContactModalShow] = useState(false);
+  const [postModalShow, setPostModalShow] = useState(false);
   const [isProfile, setIsProfile] = useState(false);
 
   useEffect(() => {
     setUid(account.get('uid'));
-    setProfile(account.get('photoURL'));
+    setThumbnail(account.get('photoURL'));
   }, account);
 
   const handleSignOut = async () => {
@@ -37,8 +37,9 @@ const Nav = () => {
   return (
     <>
       <SignInModal isOpen={signModalShow} setter={setSignModalShow} />
-      <PostModal isOpen={postModalShow} setter={setPostModalShow} />
       <ContactModal isOpen={contactModalShow} setter={setContactModalShow} />
+      <PostModal isOpen={postModalShow} setter={setPostModalShow} />
+
       <div className={styles['nav-wrapper']}>
         <div className={styles['nav-items-wrapper']}>
           <Link href="/main">
@@ -70,7 +71,7 @@ const Nav = () => {
                     style={{
                       backgroundPosition: 'center',
                       backgroundSize: 24,
-                      backgroundImage: `url(${profile})`,
+                      backgroundImage: `url(${thumbnail})`,
                     }}
                     onClick={() => {
                       setIsProfile(!isProfile);

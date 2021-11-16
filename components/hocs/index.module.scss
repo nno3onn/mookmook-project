@@ -1,7 +1,7 @@
-@import '../../styles/colors.scss';
+@import '/styles/theme.scss';
 
 .page {
-  background-color: #fafafa;
+  background-color: $color-background;
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -12,5 +12,5 @@
   margin-top: 54px;
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 1000px;
 }

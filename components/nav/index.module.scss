@@ -1,12 +1,12 @@
-@import '../../styles/colors.scss';
+@import '/styles/theme.scss';
 
 .nav-wrapper {
   display: flex;
   justify-content: center;
   position: fixed;
   width: 100vw;
-  height: 54px;
-  background-color: $color-nav;
+  height: $height-nav;
+  background-color: $color-primary;
   color: white;
 }
 
@@ -62,14 +62,14 @@
   list-style: none;
   padding-left: 0px;
 
-  box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+  box-shadow: $box-shadow-dropdown;
 
   li {
     width: 100%;
     padding: 15px 20px 15px 20px;
     &:hover {
       cursor: pointer;
-      background-color: #f1f1f1;
+      background-color: $color-select;
       border-radius: 7px;
     }
 
