@@ -9,6 +9,7 @@ import { createStore } from "redux";
 import { createWrapper } from "next-redux-wrapper";
 
 import reducers from "redux/reducers";
+import dynamic from "next/dynamic";
 
 import {
   AR_signOut,
@@ -18,8 +19,6 @@ import {
 import "styles/globals.scss";
 
 const App = ({ Component, pageProps }) => {
-  if (!global.window) return <></>;
-
   if (firebase.apps.length === 0) {
     // configuration으로 firebase app을 초기화함
     firebase.initializeApp({

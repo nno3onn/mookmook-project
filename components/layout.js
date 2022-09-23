@@ -15,8 +15,6 @@ const Layout = () => {
   const { pathname } = useRouter();
   const account = useSelector((store) => store.account);
   const user = account.get("uid");
-  // const url = window.location.href;
-  // console.log(url);
 
   const [show, setShow] = useState(false);
   const handleShow = () => {
