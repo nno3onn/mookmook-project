@@ -8,6 +8,8 @@ import ModalTitle from "react-bootstrap/ModalTitle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./style.module.scss";
 
+if (typeof global.navigator === "undefined") global.navigator = {};
+
 class MovieInfo extends Component {
   constructor(props) {
     super(props);

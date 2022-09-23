@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Modal, Button } from "react-bootstrap";
 import styles from "pages/contact/styles.module.scss";
 
+if (typeof global.navigator === "undefined") global.navigator = {};
+
 const Contact = ({ show, onHide }) => {
   const [question, setQuestion] = useState("");
   const account = useSelector((store) => store.account);
