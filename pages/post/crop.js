@@ -8,6 +8,8 @@ import "react-image-crop/dist/ReactCrop.css";
 import style from "pages/post/style.module.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+if (typeof global.navigator === "undefined") global.navigator = {};
+
 class ImageCrop extends PureComponent {
   constructor(props) {
     super(props);

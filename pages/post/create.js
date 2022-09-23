@@ -15,6 +15,8 @@ import { Scrollbars } from "react-custom-scrollbars";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./style.module.scss";
 
+if (typeof global.navigator === "undefined") global.navigator = {};
+
 class PostCreatePage extends React.Component {
   constructor(props) {
     super(props);
