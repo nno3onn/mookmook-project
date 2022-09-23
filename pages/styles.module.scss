@@ -1,0 +1,223 @@
+// Include Foundation 5.0.2
+@import "~compass-mixins/lib/compass/css3";
+@import "@kfonts/nanum-square-ac-otf";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap";
+// Flip cards
+$rotate: 180deg;
+$cardWidth: 200px;
+$cardHeight: 150px;
+$speed: 0.6s;
+$scale: 2;
+
+/* react loading skeleton */
+.skeleton-wrapper {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.main-container {
+  padding: 30px 120px 30px 240px;
+}
+
+.container_row {
+  width: 100%;
+  padding: 30px 120px 30px 240px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-wrap: wrap;
+  // justify-content: space-around;
+}
+.cardcontainer {
+  width: $cardWidth;
+  height: $cardHeight;
+  position: relative;
+  @include transition(z-index $speed);
+  @include perspective(1000);
+  &:hover {
+    z-index: 3;
+  }
+  &:hover .card,
+  &.hover .card {
+    @include transform(rotateY($rotate) scale($scale));
+  }
+  .card {
+    position: relative;
+    //@include transform( scale( 0.5 ) ); // Initial Scale
+    @include transition(all $speed ease-in-out);
+    @include transform-style(preserve-3d);
+    .front,
+    .back {
+      width: $cardWidth;
+      height: $cardHeight;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include backface-visibility(hidden);
+    }
+    .front {
+      z-index: 2;
+    }
+    .back {
+      background: #ffffff00;
+      @include transform(rotateY($rotate));
+    }
+  }
+}
+// end Flip cards
+
+//Card Detail Start
+/* Rectangle 1 */
+
+.detail_card {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  border: solid 0.02em;
+  border-color: #adadad;
+  background: #ffffff;
+}
+
+.detail_image {
+  width: 85px;
+  height: 120px;
+  float: left;
+  position: relative;
+  top: 15px;
+  margin-left: 8px;
+}
+
+.aboutinfo {
+  width: 145px;
+  height: 150px;
+  float: left;
+  padding-top: 26px;
+  padding-bottom: 20px;
+  padding-right: 3px;
+  margin-left: 8px;
+}
+
+/* 나니아연대기: 마녀와 사자 */
+
+.detail_title {
+  position: relative;
+  text-align: left;
+  font-family: "nanum-square-ac-otf";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 17px;
+  margin-bottom: 7px;
+  color: #000000;
+}
+.infobox {
+  position: relative;
+  display: block;
+  width: 145px;
+  height: 12px;
+}
+
+.colorbox {
+  float: left;
+  display: inline;
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+/* by username */
+
+.username {
+  float: left;
+  display: inline;
+  margin-top: 0.5px;
+  font-family: "nanum-square-ac-otf";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 7px;
+  // line-height: px;
+  color: #242424;
+
+  margin-bottom: 10px;
+}
+
+/* “ 마녀는 절대 울지 않지 꼬마야 너 터키쉬 젤리 먹을래?? “ */
+
+.famoustext {
+  position: relative;
+  margin-top: 10px;
+  width: 145px;
+  height: auto;
+  padding-left: 3px;
+  padding-right: 5px;
+  font-family: "nanum-square-ac-otf";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 11px;
+  text-align: left;
+  word-break: break-all;
+  color: #4b4b4b;
+}
+
+// switch button
+.switch {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.switch input {
+  display: none;
+}
+.switch span {
+  position: absolute;
+  background-color: #eeeeee;
+  border-radius: 100px;
+  box-shadow: 0 0px 20px #eeeeee;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.switch span::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #aaa;
+  top: 5px;
+  left: 5px;
+  transition: 0.8s;
+}
+.switch span::after {
+  content: "Movie";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  font-family: "nanum-square-ac-otf";
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #aaa;
+}
+.switch input:checked + span {
+  background-color: #3a96ff;
+  box-shadow: 0 0px 20px #3a96ffcc;
+}
+.switch input:checked + span::before {
+  transform: translateX(80px);
+  background-color: #fff;
+}
+.switch input:checked + span::after {
+  content: "Book";
+  color: white;
+}

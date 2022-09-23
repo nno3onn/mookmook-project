@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@800&display=swap");
+.contact {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 999999;
+}
+
+.brandName {
+  font-family: "Bodoni Moda", serif;
+  font-size: 36px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+//font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+
+.post-header {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #003366;
+  padding-left: 160px;
+}
+.post-container {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  background-color: hsl(205, 52%, 92%);
+}
+.post-component {
+  margin: 0px auto 30px;
+  background-color:white;
+  width: 85%;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.google {
+  width: 330px;
+  height: 35px;
+  border-radius: 4px;
+  background: #db3236;
+  color: white;
+  border: 0px transparent;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+}
+.facebook {
+  width: 330px;
+  height: 35px;
+  border-radius: 4px;
+  background: #3b5998;
+  color: white;
+  border: 0px transparent;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+}
+
+.hi {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.image {
+  display: block;
+  margin: 20px auto;
+  border-radius: 100%;
+}
+.text {
+  line-height: 30px;
+  text-align: center;
+}
+.email {
+  color: #5f6368;
+  text-align: center;
+}
+.border {
+  margin: 30px 0;
+  background-color: #ccc;
+  height: 1px;
+}
+.logout {
+  display: block;
+  margin: 20px auto;
+}
