@@ -18,6 +18,8 @@ import {
 import "styles/globals.scss";
 
 const App = ({ Component, pageProps }) => {
+  if (!window) return;
+
   if (firebase.apps.length === 0) {
     // configuration으로 firebase app을 초기화함
     firebase.initializeApp({
